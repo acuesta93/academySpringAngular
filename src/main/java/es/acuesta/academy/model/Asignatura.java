@@ -13,15 +13,20 @@ public class Asignatura {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
-    final private String nombre;
-    final private String descripcion;
-    final private long horasSemana;
-    final private long precioHora;
-    final private LocalDateTime fechaIngreso;
+    private String nombre;
+    private String descripcion;
+    private long horasSemana;
+    private long precioHora;
+    private LocalDateTime fechaIngreso;
 
-    public Asignatura(String nombre, String descripcion, long horasSemana, long precioHora, LocalDateTime fechaIngreso) {
+    
+    public Asignatura() {
+		super();
+	}
+
+	public Asignatura(String nombre, String descripcion, long horasSemana, long precioHora, LocalDateTime fechaIngreso) {
         super();
         this.nombre = nombre;
         this.descripcion = descripcion;
@@ -30,11 +35,11 @@ public class Asignatura {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -57,8 +62,30 @@ public class Asignatura {
     public LocalDateTime getFechaIngreso() {
         return fechaIngreso;
     }
+    
+    
 
-    @Override
+    public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public void setHorasSemana(long horasSemana) {
+		this.horasSemana = horasSemana;
+	}
+
+	public void setPrecioHora(long precioHora) {
+		this.precioHora = precioHora;
+	}
+
+	public void setFechaIngreso(LocalDateTime fechaIngreso) {
+		this.fechaIngreso = fechaIngreso;
+	}
+
+	@Override
     public int hashCode() {
         return Objects.hash(id);
     }
